@@ -1,12 +1,19 @@
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  // check what text was put into the form field
-  let url = document.getElementById("name").value;
-  Client.checkForName(url);
+  let url = document.getElementById("url").value;
+  console.log(url);
+  console.log(Client.checkValidUrl(url));
 
-  console.log("::: Form Submitted :::");
-  const res = await fetch(`http://localhost:8081/news-eval/${url}`);
+  const res = await fetch("http://localhost:8081/eval", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ url }),
+  });
+  // console.log(res);
   document.getElementById("results").innerHTML = res.message;
   // .then((res) => res.json())
   // .then(function (res) {

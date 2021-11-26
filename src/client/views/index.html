@@ -19,26 +19,13 @@
     <main>
       <section>
         <form class="" onsubmit="return Client.handleSubmit(event)">
-          <input
-            id="name"
-            type="text"
-            name="input"
-            value=""
-            onblur="onBlur()"
-            placeholder="Name"
-          />
-          <input
-            type="submit"
-            name=""
-            value="submit"
-            onclick="return handleSubmit(event)"
-            onsubmit="return handleSubmit(event)"
-          />
+          <input id="url" type="text" name="input" value="" placeholder="Url" />
+          <input type="submit" name="" value="submit" />
         </form>
       </section>
 
       <section>
-        <strong>Form Results:</strong>
+        <strong>News Eval Results:</strong>
         <div id="results"></div>
       </section>
     </main>
