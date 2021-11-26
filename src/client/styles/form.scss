@@ -1,12 +1,19 @@
 form {
-    border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
-}
-
-input {
-    padding: 5px 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  background-color: #fff;
+  input {
+    padding: 10px 20px;
     width: 100%;
     line-height: 16px;
     margin: 10px 0;
+    border: none;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    &#btn {
+      cursor: pointer;
+    }
+  }
 }

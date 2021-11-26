@@ -18,7 +18,7 @@ const handleSubmit = async (e) => {
     htmlNewsResult = `
   <ul>
   <li>
-      ${text}
+      ${text}:
       <ul>
           <li>Agreement: ${agreement}</li>
           <li>Confidence: ${confidence}</li>
