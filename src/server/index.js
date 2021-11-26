@@ -19,7 +19,6 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve("src/client/views/index.html"));
 });
 
-// designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
   console.log("Server running on port 8081");
 });
