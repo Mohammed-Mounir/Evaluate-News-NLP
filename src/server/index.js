@@ -1,10 +1,10 @@
-import dotenv from "dotenv";
-import path from "path";
-import fetch from "node-fetch";
-import express from "express";
-import cors from "cors";
+const dotenv = require("dotenv");
+const path = require("path");
+const fetch = require("node-fetch");
+const express = require("express");
+const cors = require("cors");
 const app = express();
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 const API_KEY = process.env.API_KEY;
 
 app.use(express.urlencoded({ extended: false }));
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
-  console.log("Example app listening on port 8081!");
+  console.log("Server running on port 8081");
 });
 
 app.post("/eval", async (req, res) => {
