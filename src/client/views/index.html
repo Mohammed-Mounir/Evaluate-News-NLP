@@ -19,8 +19,14 @@
     <main>
       <section>
         <form class="" onsubmit="return Client.handleSubmit(event)">
-          <input id="url" type="text" name="input" value="" placeholder="Url" />
-          <input type="submit" name="" value="submit" />
+          <input
+            id="url"
+            type="text"
+            name="input"
+            value=""
+            placeholder="Enter here a valid news url"
+          />
+          <input type="submit" name="" value="Get result" />
         </form>
       </section>
 
@@ -33,5 +39,15 @@
     <footer>
       <p>This is a footer</p>
     </footer>
+
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
   </body>
 </html>
