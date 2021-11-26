@@ -1,6 +1,7 @@
 # Evaluate-News-NLP App/WebTool
 
 Evaluate News NLP is a Natural Language Processing JS App/WebTool, that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites. NLP is the ability of an application to understand the human language, written or oral.
+
 This project is provided by Egypt-FWD / Udacity | NLP is provided by MeaningCloud Sentiment Analysis API.
 
 ## Installation
@@ -23,13 +24,13 @@ API_KEY=WRITE YOUR KEY HERE
 
 Open two terminals:
 
-One the first Terminal
+On the first Terminal
 
 ```
 $ npm start
 ```
 
-One the second Terminal
+On the second Terminal
 
 ```
 $ npm run build-prod
