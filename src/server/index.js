@@ -4,14 +4,13 @@ const fetch = require("node-fetch");
 const express = require("express");
 const cors = require("cors");
 const app = express();
-// const __dirname = path.resolve();
-const API_KEY = process.env.API_KEY;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
-console.log(__dirname);
-dotenv.config({ path: `${__dirname}/./../../.env` });
+
+dotenv.config({ path: path.resolve(__dirname, "../../.env") });
+const API_KEY = process.env.API_KEY;
 
 app.use(express.static("dist"));
 
@@ -27,16 +26,9 @@ app.listen(8081, function () {
 
 app.post("/eval", async (req, res) => {
   const newsUrl = req.body.url;
-  console.log(
-    `https://api.meaningcloud.com/sentiment-2.1?key=${API_KEY}&url=${newsUrl}&lang=en`
-  );
-
   const response = await fetch(
     `https://api.meaningcloud.com/sentiment-2.1?key=${API_KEY}&url=${newsUrl}&lang=en`
   );
-
   const data = await response.json();
-
-  console.log(data);
-  // res.send(mockAPIResponse);
+  res.send(data.sentence_list[0]);
 });
